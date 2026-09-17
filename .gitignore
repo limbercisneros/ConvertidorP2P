@@ -1,0 +1,10 @@
+# Dependencias
+.venv/
+.vendor/
+
+# Archivos
+dist/
+build/
+*.pyc
+__pycache__/
+

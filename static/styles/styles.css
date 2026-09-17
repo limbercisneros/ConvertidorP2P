@@ -1,0 +1,463 @@
+/* Codigo desarrollado con apoyo de IA (Gemini: Flash-Lite, ChatGPT).
+Utilizado unicamente para consultas sobre las propiedades y atributos 
+adecuados para el estilo css como en los botones del nav, .btn-on*, etc.
+
+
+
+/* Fuente Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+html {
+    font-size: 16px;
+    color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+button:focus,
+select:focus,
+div:focus {
+    outline: none !important;
+}
+
+.off {
+    display: none !important;
+}
+
+/* Barra de navegacion */
+.nav {
+    width: 100%;
+    top: 86%;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: none;
+    z-index: 999;
+}
+
+.nav-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    gap: 0;
+    border-radius: 28px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    border: 0.4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-nav {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* .btn-nav.on{
+    padding: 12px 20px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 7px 1px rgb(255, 255, 255, 0.4);
+}  */
+.btn-on.nav-on {
+    top: -10%;
+    height: 119.4%;
+    border-radius: 35px;
+    background-color: rgba(255, 255, 255, 0%);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    transition: all 0.285s ease;
+}
+
+.btn-nav.on {
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 0);
+    transform: scale(1.35);
+    font-weight: 500;
+}
+
+
+
+/* Tarjetas principales de convertir y usdt */
+
+.card-convertidor,
+.card-usdt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 11%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 7px 1px rgba(255, 255, 255, 0.1);
+}
+
+.card-titles {
+    width: 100%;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    border: none;
+    padding: 8px;
+}
+
+
+/* Elementos internos de convertir y usdt*/
+
+#usdt-compra-venta-divisas,
+.select-fiat-convertidor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.select-fiat-convertidor {
+    width: auto;
+    gap: 10px;
+}
+
+#title-usdt {
+    padding: 0;
+}
+
+/* Botones Compra y venta */
+.ustd-btns-compra-venta {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    gap: 0;
+    border-radius: 18px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+    width: auto;
+}
+
+.btn-usdt {
+    position: relative;
+    z-index: 2;
+    border-radius: 18px;
+    font-size: 12px;
+    padding: 6px 7px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-on {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: -10%;
+    left: 0px;
+    height: 119%;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 7px 0.1px rgba(0, 0, 0, 0.8);
+    transform: scale(1.15);
+    pointer-events: none;
+    transition: all 0.2835s ease;
+}
+
+.btn-usdt.on {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.21);
+    font-weight: 500;
+}
+
+.btn-usdt,
+.ustd-btns-compra-venta,
+label,
+span {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Boton de intercambio convertidor */
+.btn-girar {
+    padding: 5px;
+    cursor: pointer;
+    top: -17%;
+    left: 0px;
+    height: 133%;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 7px 0.1px rgba(0, 0, 0, 0.8);
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+/* Select */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: rgba(255, 255, 255, 0.144);
+    color: rgba(255, 255, 255, 0.5);
+    border: 0.1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+select:hover,
+select:active,
+.btn-girar:hover,
+.btn-girar:active {
+    background-color: rgba(117, 116, 116, 0.8);
+    box-shadow: 0 0 7px 0.1px rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+    color: rgba(255, 255, 255, 1);
+}
+
+select:focus {
+    background-color: rgba(117, 116, 116, 0.8);
+    box-shadow: 0 0 7px 0.1px rgba(0, 0, 0, 0.8);
+    transform: scale(1);
+    color: #fffefe;
+}
+
+option {
+    background-color: rgba(78, 77, 77, 0.8);
+    color: #fffefe;
+}
+
+.select {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+
+
+
+/* Conversiones: Boton Por, Input y Result */
+.card-input-result {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    padding: 5px;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
+.btns-usdt-por {
+    border: 1px solid rgba(255, 255, 255, 0);
+    display: flex;
+    background-color: rgba(255, 255, 255, 0%);
+    gap: 15px;
+    overflow: visible;
+}
+
+.btn-usdt-por {
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0%);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-usdt-por::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+
+    width: 18px;
+    height: 3px;
+    background-color: rgb(255, 166, 0);
+    border-radius: 3px;
+
+
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-usdt-por.on::after {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
+
+.btn-usdt-por.on {
+    color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+}
+
+
+/* Inputs */
+.usdt-input,
+.convertir-input {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 0 0 0 4px;
+}
+
+.input {
+    width: 80%;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0%);
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 0px;
+    border: 0px;
+    border-bottom-color: rgba(255, 255, 255, 0);
+}
+
+.usdt-input::after,
+.convertir-input::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+
+    transform: translateX(-50%);
+    width: 97%;
+    height: 0.5px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.usdt-input.alertas::after,
+.convertir-input.alertas::after {
+    height: 2px;
+    background-color: rgba(255, 0, 0, 1);
+
+}
+
+.alertas-inputs {
+    padding: 0 0 0 5px;
+    color: rgba(255, 255, 255, 0.4);
+    border: none;
+    font-size: 15.6px;
+}
+
+.alertas-inputs.on {
+    color: rgb(255, 52, 52);
+}
+
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-image: none;
+}
+
+
+/* resultado de usdt */
+#result-usdt,
+#result-convertidor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 4px 4px 4px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.monto-fiat {
+    border: 1px solid rgba(255, 255, 255, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    gap: 7px;
+    padding: 0;
+}
+
+/* Texto de convertidor: MONTO*/
+#monto-convertir-text {
+    padding: 5px 0 5px 6px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+form {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 2%;
+    border: 2px solid rgba(219, 14, 202, 0);
+}
+
+@media (max-width: 2200px) {
+
+    .card-convertidor,
+    .card-usdt {
+        width: 312px;
+        height: 310px;
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .card-convertidor,
+    .card-usdt {
+        width: 340px;
+        height: 333px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .card-convertidor,
+    .card-usdt {
+        width: 300px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 539px) {
+
+    .card-convertidor,
+    .card-usdt {
+        width: 290px;
+        height: 330px;
+    }
+}

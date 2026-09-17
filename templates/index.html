@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block title %}Convertir{% endblock %}
+{% block main %}
+
+{# Contenedor del convertidor #}
+<div id="convertidor" class="card-convertidor">
+
+    {# Titulo convertidor #}
+    <div class="card-titles">
+        <h1>Convertir</h1>
+    </div>
+    <form onsubmit="event.preventDefault();">
+        <div class="select-fiat-convertidor">
+            {# Select A #}
+            <div class="convertidor-select-intercambio select">
+                <label for="select-fiat-c-a">DE</label>
+                <select id="select-fiat-c-a">
+                    <option value="ARS">ARS</option>
+                    <option value="PEN">PEN</option>
+                    <option value="BOB">BOB</option>
+                    <option value="USD">USD</option>
+                    <option value="COP">COP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="VES">VES</option>
+                </select>
+            </div>
+            {# itercambia los selects #}
+            <button type="button" onclick="IntercambiarSelect()" class="btn-girar">Girar</button>
+
+            {# Select B #}
+            <div class="convertidor-select-intercambio select">
+                <label for="select-fiat-c-b">A</label>
+                <select id="select-fiat-c-b">
+                    <option value="BOB">BOB</option>
+                    <option value="ARS">ARS</option>
+                    <option value="PEN">PEN</option>
+                    <option value="USD">USD</option>
+                    <option value="COP">COP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="VES">VES</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-input-result">
+            <p id="monto-convertir-text">Monto</p>
+            {# Input #}
+            <div id="input-convertidor" class="convertir-input">
+                <input id="monto-convertidor" class="input" type="text" inputmode="numeric" autocomplete="off"
+                    placeholder="0"  maxlength="12" required oninput=" Convertidor();">
+            </div>
+            {# resultado #}
+            <p id="p-alerta" class="alertas-inputs">Min - Max</p>
+            <div id="result-convertidor"></div>
+        </div>
+    </form>
+
+</div>
+{# Contenedor del usdt #}
+<div id="usdt" class="card-usdt off">
+
+    {# Titulo usdt #}
+    <div class="card-titles">
+        <h1 id="title-usdt">Comprar USDT</h1>
+    </div>
+    <form id="form-usdt" onsubmit="event.preventDefault();">
+        <div id="usdt-compra-venta-divisas">
+
+            {# Btn Compra/venta #}
+            <div class="ustd-btns-compra-venta">
+                <div class="btn-on"></div>
+                <button id="btn-usdt-compra" class="btn-usdt on" onclick="BtnUsdt('compra');"
+                    type="button">Comprar</button>
+                <button id="btn-usdt-venda" class="btn-usdt" onclick="BtnUsdt('venta');" type="button">Vender</button>
+            </div>
+
+            {# Select de fiat #}
+            <div class="select">
+                <label for="select-fiat-usdt-a">Divisa</label>
+                <select id="select-fiat-usdt-a">
+                    <option value="ARS">ARS</option>
+                    <option value="PEN">PEN</option>
+                    <option value="BOB">BOB</option>
+                    <option value="USD">USD</option>
+                    <option value="COP">COP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="VES">VES</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="usdt-input-monto-result" class="card-input-result">
+
+            {# Btns por fiat o usdt #}
+            <div class="btns-usdt-por">
+                <button id="btn-usdt-por-f" class="btn-usdt-por on" onclick="BtnUsdtPor('fiat')" type="button">Por
+                    ARS</button>
+                <button id="btn-usdt-por-u" class="btn-usdt-por" onclick="BtnUsdtPor('usdt')" type="button">Por
+                    USDT</button>
+            </div>
+
+            {# Input #}
+            <div id="input-usdt-alert" class="usdt-input">
+                <input id="monto-usdt" class="input" type="text" inputmode="numeric" autocomplete="off" placeholder="0"
+                    maxlength="12" required oninput="usdt()">
+            </div>
+            
+            {# Resultados #}
+            <p id="p-alerta-usdt" class="alertas-inputs">Min - Max</p>
+            <div id="result-usdt"></div>
+        </div>
+    </form>
+</div>
+{% endblock %}
