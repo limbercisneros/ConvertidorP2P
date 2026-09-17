@@ -7,5 +7,5 @@ dist/
 build/
 *.pyc
 __pycache__/
-.db
-
+*.db
+*.sqlite
